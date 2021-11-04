@@ -4,5 +4,5 @@ console.log("hello!");
 getClasses();
 
 const obj = { a: "alpha", b: "bravo" };
-const newObj = { ...obj, c: "charlie" };
+const newObj = { ...obj, c: "charlie", d: "delta" };
 console.log(newObj);
