@@ -1,6 +1,4 @@
-import { wizard } from "./wizard";
-import { barbarian } from "./barbarian";
+import getClasses from "./getClasses";
 
 console.log("hello!");
-console.log(wizard);
-console.log(barbarian);
+getClasses();
