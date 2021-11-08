@@ -1,3 +1,7 @@
 {
-  "recommendations": ["gamunu.vscode-yarn"]
+  "recommendations": [
+    "gamunu.vscode-yarn",
+    "plibither8.remove-comments",
+    "webben.browserslist"
+  ]
 }
