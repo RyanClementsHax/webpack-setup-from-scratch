@@ -1,28 +1,6 @@
-import "./app";
-import getClasses from "./lib/getClasses";
+import "./someCodeThatNeedsTranspiling";
+import "./styles/style.scss";
+import "./styles/another.css";
 
-console.log("hello!");
-getClasses();
-
-const obj = { a: "alpha", b: "bravo" };
-const newObj = { ...obj, c: "charlie", d: "delta" };
-console.log(newObj);
-
-console.log("es8 object.values ex", Object.values(newObj));
-
-function resolveAfter2Seconds() {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve("resolved");
-    }, 2000);
-  });
-}
-
-async function asyncCall() {
-  console.log("calling");
-  const result = await resolveAfter2Seconds();
-  console.log(result);
-  // expected output: "resolved"
-}
-
-asyncCall();
+const headline = "Welcome to the boogaloo";
+document.querySelector("h1").innerText = headline;
