@@ -1,5 +1,8 @@
 import getClasses from "./lib/getClasses";
 
+const age: number = 4;
+console.log(age);
+
 console.log("hello!");
 getClasses();
 

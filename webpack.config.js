@@ -7,12 +7,15 @@ module.exports = {
     static: "./dist",
   },
   plugins: [new MiniCssExtractPlugin()],
+  resolve: {
+    extensions: [".ts", ".js", ".tsx", ".jsx"],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
-        use: ["babel-loader"],
+        use: ["babel-loader", "ts-loader"],
       },
       {
         test: /\.(s[ac]|c)ss$/,
