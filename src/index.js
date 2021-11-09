@@ -1,5 +1,5 @@
-import "./dom";
-import getClasses from "./getClasses";
+import "./app";
+import getClasses from "./lib/getClasses";
 
 console.log("hello!");
 getClasses();
