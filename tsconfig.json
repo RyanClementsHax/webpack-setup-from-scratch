@@ -12,6 +12,7 @@
     "resolveJsonModule": true,
     "noImplicitReturns": true,
     "allowJs": true,
+    "sourceMap": true,
     "jsx": "react-jsx",
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
