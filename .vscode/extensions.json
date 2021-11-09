@@ -2,6 +2,7 @@
   "recommendations": [
     "gamunu.vscode-yarn",
     "plibither8.remove-comments",
-    "webben.browserslist"
+    "webben.browserslist",
+    "csstools.postcss"
   ]
 }
