@@ -4,6 +4,7 @@ module.exports = {
   mode: process.env.NODE_ENV || "development",
   devtool: "source-map",
   devServer: {
+    // HMR is enabled by default https://webpack.js.org/configuration/dev-server/#devserverhot
     static: "./dist",
   },
   plugins: [new MiniCssExtractPlugin()],
