@@ -14,6 +14,17 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        // type: "asset/resource",
+        // type: "asset/inline",
+        type: "asset",
+        // parser: {
+        //   dataUrlCondition: {
+        //     maxSize: 30 * 1024,
+        //   },
+        // },
+      },
+      {
         test: /\.(j|t)sx?$/,
         exclude: /node_modules/,
         use: ["babel-loader", "ts-loader"],
