@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 module.exports = {
   mode: process.env.NODE_ENV || "development",
@@ -10,13 +11,6 @@ module.exports = {
     // HMR is enabled by default https://webpack.js.org/configuration/dev-server/#devserverhot
     static: "./dist",
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-    }),
-  ],
   resolve: {
     extensions: [".ts", ".js", ".tsx", ".jsx"],
   },
@@ -38,7 +32,7 @@ module.exports = {
         // },
       },
       {
-        test: /\.(j|t)sx?$/,
+        test: /\.[jt]sx?$/,
         exclude: /node_modules/,
         use: ["babel-loader", "ts-loader"],
       },
@@ -54,4 +48,12 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+    new ReactRefreshWebpackPlugin(),
+  ],
 };

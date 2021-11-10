@@ -7,4 +7,5 @@ module.exports = {
       // https://www.typescriptlang.org/tsconfig#jsx
     ],
   ],
+  plugins: ["react-refresh/babel"],
 };
