@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: process.env.NODE_ENV || "development",
@@ -7,7 +8,12 @@ module.exports = {
     // HMR is enabled by default https://webpack.js.org/configuration/dev-server/#devserverhot
     static: "./dist",
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
   resolve: {
     extensions: [".ts", ".js", ".tsx", ".jsx"],
   },
