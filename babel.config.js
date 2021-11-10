@@ -1,3 +1,5 @@
+const isDevelopment = process.env.NODE_ENV !== "production";
+
 module.exports = {
   presets: [
     [
@@ -7,5 +9,5 @@ module.exports = {
       // https://www.typescriptlang.org/tsconfig#jsx
     ],
   ],
-  plugins: ["react-refresh/babel"],
+  plugins: [isDevelopment && "react-refresh/babel"].filter(Boolean),
 };

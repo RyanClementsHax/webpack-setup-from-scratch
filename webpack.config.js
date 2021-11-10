@@ -4,8 +4,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
+const mode = process.env.NODE_ENV || "development";
+const isDevelopment = process.env.NODE_ENV !== "production";
+
 module.exports = {
-  mode: process.env.NODE_ENV || "development",
+  mode,
   devtool: "source-map",
   devServer: {
     // HMR is enabled by default https://webpack.js.org/configuration/dev-server/#devserverhot
@@ -54,6 +57,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
-    new ReactRefreshWebpackPlugin(),
-  ],
+    isDevelopment && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
 };
