@@ -1,4 +1,5 @@
 const path = require("path");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -56,6 +57,9 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: process.env.ANALYZE ? "static" : "disabled",
     }),
     isDevelopment && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
